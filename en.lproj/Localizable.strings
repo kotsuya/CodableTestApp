@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  CodableTestApp
+
+  Created by YooSeunghwan on 2018/05/02.
+  Copyright © 2018年 Yoo. All rights reserved.
+*/
+
+
+//Turorial
+"Tutorial Description1" = "GitHubで言語がSwiftで書かれたStarの多い順のリポジトリ一覧を表示します。" ;
+"Tutorial Description2" = "画面右上の「Search」 ボタンをタップしてください。";
+
+//
+"Searching" = "検索中…";
