@@ -9,7 +9,7 @@
 
 //Turorial
 "Tutorial Description1" = "GitHubで言語がSwiftで書かれたStarの多い順のリポジトリ一覧を表示します。" ;
-"Tutorial Description2" = "画面右上の「Search」 ボタンをタップしてください。";
+"Tutorial Description2" = "TableViewを下に引っ張るとクルクル回り、更新をします。";
 
 //
 "Searching" = "検索中…";

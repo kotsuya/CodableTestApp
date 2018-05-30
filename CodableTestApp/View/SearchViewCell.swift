@@ -14,25 +14,14 @@ class SearchViewCell : UITableViewCell {
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var starLabel: UILabel!
     
-    var detialItem: DetailItem!
+    var detialItem: DetailItem? { didSet { updateUI() } }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    func setCell(_ item: DetailItem) {
-        detialItem = item
-        
-        nameLabel.text = item.name
-        urlLabel.text = item.htmlUrl?.absoluteString
-        starLabel.text = "\(item.stargazersCount)"
+    private func updateUI() {
+        if let item = detialItem {
+            nameLabel.text = item.name
+            urlLabel.text = item.htmlUrl?.absoluteString
+            starLabel.text = "⭐️\(item.stargazersCount)"
+        }        
     }
 }
 

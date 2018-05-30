@@ -1,21 +1,21 @@
 //
-//  Rss.swift
+//  JsonData.swift
 //  CodableTestApp
 //
-//  Created by YooSeunghwan on 2018/05/02.
+//  Created by YooSeunghwan on 2018/05/30.
 //  Copyright © 2018年 Yoo. All rights reserved.
 //
 
 import Foundation
 
-struct RssItemsLicense: Codable {
+struct JsonItemsLicense: Codable {
     let key: String
     let name: String
     let spdx_id: String?
     let url: URL?
 }
 
-struct RssItemsOwner: Codable {
+struct JsonItemsOwner: Codable {
     let login: String
     let id: Int
     let avatar_url: URL
@@ -35,11 +35,11 @@ struct RssItemsOwner: Codable {
     let site_admin: Bool
 }
 
-struct RssItems: Codable {
+struct JsonItems: Codable {
     let id: Int
     let name: String
     let full_name: String
-    let owner: RssItemsOwner
+    let owner: JsonItemsOwner
     let `private`: Bool
     let html_url: URL
     let description: String
@@ -102,7 +102,7 @@ struct RssItems: Codable {
     let mirror_url: URL?
     let archived: Bool
     let open_issues_count: Int
-    let license: RssItemsLicense?
+    let license: JsonItemsLicense?
     let forks: Int
     let open_issues: Int
     let watchers: Int
@@ -110,8 +110,10 @@ struct RssItems: Codable {
     let score: Int
 }
 
-struct Rss: Codable {
+struct JsonData: Codable {
     let total_count: Int
     let incomplete_results: Bool
-    let items: [RssItems]
+    let items: [JsonItems]
 }
+
+

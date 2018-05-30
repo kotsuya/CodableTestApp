@@ -8,10 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-    
-    @IBOutlet weak var navigationBar: UINavigationItem!
-    @IBOutlet weak var closeButton: UIBarButtonItem!
+class DetailViewController: UIViewController, UIWebViewDelegate {
     
     // TODO : WKWebView
     @IBOutlet weak var detailWebView: UIWebView!
@@ -19,7 +16,20 @@ class DetailViewController: UIViewController {
     // TODO : SVProgressHUD
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
-    var detailItem: DetailItem!
+    var siteURL: URL? {
+        didSet {
+            if view.window != nil {
+                loadRequest()
+            }
+        }
+    }
+    
+    private func loadRequest() {
+        if let url = siteURL {
+            let request = URLRequest(url: url)
+            detailWebView.loadRequest(request)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,29 +38,16 @@ class DetailViewController: UIViewController {
         indicatorView.layer.cornerRadius = 5
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let detailItem = detailItem else { return }
-        
-        navigationBar.title = "\(detailItem.name)(\(detailItem.stargazersCount))"
-        
-        let request = URLRequest(url: detailItem.htmlUrl!)
-        detailWebView.loadRequest(request)
+        if siteURL != nil { loadRequest() }
     }
     
-    @IBAction func closeAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func safariAction(_ sender: Any) {
-        let alert = UIAlertController(title: "", message: "[Safari]へ移動しますか？", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { action in
-            if let url = self.detailItem.htmlUrl {
+    @IBAction private func safariAction(_ sender: UIBarButtonItem) {
+         let alert = UIAlertController(title: "", message: "[Safari]へ移動しますか？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+            if let url = self?.siteURL {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         })
@@ -60,24 +57,18 @@ class DetailViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-}
-
-extension DetailViewController: UIWebViewDelegate {
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        return true
-    }
+    // MARK: - Web view data source
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        indicatorView.isHidden = false
+        indicatorView.startAnimating()
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        indicatorView.isHidden = true
+        indicatorView.stopAnimating()
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        indicatorView.isHidden = true
+        indicatorView.stopAnimating()
     }
 }
-

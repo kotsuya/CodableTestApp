@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E137AB4A20BE602F00895415 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E137AB4920BE602F00895415 /* JsonData.swift */; };
 		E157C62C20994EB100DFE3AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C62B20994EB100DFE3AC /* AppDelegate.swift */; };
 		E157C62E20994EB100DFE3AC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C62D20994EB100DFE3AC /* SearchViewController.swift */; };
 		E157C63120994EB100DFE3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E157C62F20994EB100DFE3AC /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		E157C63620994EB300DFE3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E157C63420994EB300DFE3AC /* LaunchScreen.storyboard */; };
 		E157C63E20994FA700DFE3AC /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C63D20994FA700DFE3AC /* SearchViewCell.swift */; };
 		E157C64020994FE800DFE3AC /* DetailItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C63F20994FE800DFE3AC /* DetailItem.swift */; };
-		E157C6422099505C00DFE3AC /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C6412099505C00DFE3AC /* Rss.swift */; };
 		E157C644209950B500DFE3AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C643209950B500DFE3AC /* DetailViewController.swift */; };
 		E157C6462099510900DFE3AC /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C6452099510900DFE3AC /* UIAlertController+.swift */; };
 		E157C64C20995A2B00DFE3AC /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E157C64B20995A2B00DFE3AC /* ConfigManager.swift */; };
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E137AB4920BE602F00895415 /* JsonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		E157C62820994EB100DFE3AC /* CodableTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodableTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E157C62B20994EB100DFE3AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E157C62D20994EB100DFE3AC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		E157C63720994EB300DFE3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E157C63D20994FA700DFE3AC /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		E157C63F20994FE800DFE3AC /* DetailItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItem.swift; sourceTree = "<group>"; };
-		E157C6412099505C00DFE3AC /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
 		E157C643209950B500DFE3AC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E157C6452099510900DFE3AC /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
 		E157C64B20995A2B00DFE3AC /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				E157C63F20994FE800DFE3AC /* DetailItem.swift */,
-				E157C6412099505C00DFE3AC /* Rss.swift */,
+				E137AB4920BE602F00895415 /* JsonData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,12 +195,12 @@
 				E157C62E20994EB100DFE3AC /* SearchViewController.swift in Sources */,
 				E157C63E20994FA700DFE3AC /* SearchViewCell.swift in Sources */,
 				E157C6462099510900DFE3AC /* UIAlertController+.swift in Sources */,
-				E157C6422099505C00DFE3AC /* Rss.swift in Sources */,
 				E157C64020994FE800DFE3AC /* DetailItem.swift in Sources */,
 				E1998113209968B900CB15C5 /* Reachability.swift in Sources */,
 				E157C62C20994EB100DFE3AC /* AppDelegate.swift in Sources */,
 				E157C644209950B500DFE3AC /* DetailViewController.swift in Sources */,
 				E157C64C20995A2B00DFE3AC /* ConfigManager.swift in Sources */,
+				E137AB4A20BE602F00895415 /* JsonData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghwan.CodableTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -390,7 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.seunghwan.CodableTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
